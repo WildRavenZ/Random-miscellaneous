@@ -1,8 +1,8 @@
-print("\n---------------------------------\nBienvenido a Random miscellaneous\n---------------------------------") #Texto de bienvenida
+print("\n---------------------------------\nBienvenido a Random miscellaneous\n---------------------------------")
 while True: #Repite el programa siempre que lo parámetros se cumplan.
     x = 0 #Enumerar lo resultados.
     from random import randint, sample, uniform #Modulo de random (randint genera un número entero aleatorio, sample elige aleatoriamente una opción de una lista sin reemplazo, uniform genera un número decimal aleatorio).
-    menu = int(input("\nMENU:\n1 - Número aleatorio entre dos números\n2 - Baraja aleatoria\n3 - Lanzamiento de moneda\n4 - Lanzamiento de dado\n5 - Si o No\n6 - Letra aleatoria\n7 - Piedra papel o tijera\n8 - Coordenada geográfica aleatoria\n9 - Número binario aleatorio\n0 - Ayuda\n")) #Menu que pide la primer variable para seguir el programa.
+    menu = int(input("\nMENU:\n1 - Número aleatorio entre dos números\n2 - Baraja aleatoria\n3 - Lanzamiento de moneda\n4 - Lanzamiento de dado\n5 - Si o No\n6 - Letra aleatoria\n7 - Piedra papel o tijera\n8 - Coordenada geográfica aleatoria\n9 - Número binario aleatorio\n0 - Lista aleatoria\n99 - Ayuda\n")) #Menu que pide la primer variable para seguir el programa.
     if menu == 1: #Cuando menú es igual a uno...
         inf = int(input("Ingresa el valor inferior del límite: ")) #Ingresa el valor inferior para la función randint.
         sup = int(input("Ingresa el valor superior del límite: "))#Ingresa el valor superior para la función randint.
@@ -61,7 +61,17 @@ while True: #Repite el programa siempre que lo parámetros se cumplan.
             x = x + 1 #El valor x va reasignandose cada vez que el bucle se repite (aumenta de uno en uno).
             num = randint(0, 2 ** bint) #Genera un número entero aleatorio con rango de 0 a 2^bint.
             print(x, num, "en binario es ", bin(num)) #Imprime el numero entero que se generó aleatoriamente y tambien lo muestra en binario.
-    elif menu == 0: #Cuando menú es igual a cero...
+    elif menu == 0: #Cuando menú = 8...
+        list_ = [] #Genera la lista
+        num_elements = int(input("Ingresa el número de valores de la lista: ")) #Ingresa el rango de la lista.
+        for i in range(num_elements): #Para cada espacio de la lsita...
+            element = input("Ingresa un elemento a la lista: ") #Ingresa un elemento.
+            list_.append(element) #Se agrega a la lista.
+        amount = int(input("¿Cuantos elementos aleatorios de la lista quiere obtener? ")) #Indica el número de resultados que quieres obtener.
+        for i in range(0, amount): #Bucle de incremento iterable.
+            x = x + 1 #El valor x va reasignandose cada vez que el bucle se repite (aumenta de uno en uno).
+            print(x, "El elemento aleatorio de la lista es:", list_[randint(0, num_elements - 1)]) #Imprime un elemento aleatorio de la lista.
+    elif menu == 99: #Cuando menú es igual a noventa y nueve...
         print("Bienvenido a Random.py, la funcionalidad de este programa radica en generar variables aleatorias, así que te diré como funciona cada una:") #Muestra el menú de ayuda.
         print("1 - Número aleatorio entre dos números: Esta función proporciona la cantidad que desees de números aleatorios entre un límite de enteros que indiques.")
         print("2 - Baraja aleatoria: De una baraja, podrás obtener cuantas cartas aleatorias quieres de la baraja inglesa. No te quedes con un as bajo la manga.")
@@ -72,5 +82,6 @@ while True: #Repite el programa siempre que lo parámetros se cumplan.
         print("7 - Piedra papel o tijera: Lanza solo una desición aleatoria entre Piedra, Papel o Tijera. No, no es tu amigo virtual, solo es un código")
         print("8 - Coordenada geográfica aleatoria: Brinda una ubicación geográfica aleatoria en grados decimales. Sin dudas, el favorito del autor.")
         print("9 - Número binario aleatorio: Genera un número entero entre 0 y una base binaria para mostrar dicho número y el número en binario.")
+        print("0 - Lista aleatoria: Genera una lista mediante las entradas de la cantidad de elementos de la lista y sus elementos.")
     else: #De lo contrario, si se escoge un número diferente de entre 0 a 9...
         break #Termina el programa.

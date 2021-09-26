@@ -16,6 +16,7 @@ CHANGELOG: (Versión 1.2.0) realizada el 26/09/2021.
 La nueva versión presenta una nueva función:
 1 - Contraseña aleatoria: Genera una contraseña de 16 caracteres aleatorios de números, letras mayúsuclas y minsuculas y simbolos.
 2 - Se agregó la función a la función de menu MAIN.
+3 - Se ha actualizado el documento .pdf en base a los cambios en la nueva versión.
 
 NOTA DEL AUTOR:
 El código de random miscellaneous está permitido para su distribución y edición, puesto que se trata de un código de aprendizaje, sin embargo, el documento .pdf es de uso únicamente de lectura, no cambie ningun aspecto de este.
